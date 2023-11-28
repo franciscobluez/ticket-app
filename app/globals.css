@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+*Elements making fonts sizes
+*/
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+  h1 {
+    @apply text-3xl;
+  }
+  h1 {
+    @apply text-2xl;
+  }
+  h1 {
+    @apply text-xl;
+  }
+  p {
+    @apply text-sm text-default-text;
+  }
+
+  /*
+*This code/rule applies globally to the whole site in general
+*
+*
+*The rounded-xl: class adds rounded corners with a large radius
+*p-4 class: adds padding of 16px on all sides of the form element.
+*bg-card: Sets the background color of the input field to a light gray color, similar to a card element.
+*p-1: Adds padding of 4px on all sides of the input field.
+*/
+  form {
+    @apply rounded-xl p-4;
+  }
+  label {
+    @apply mt-4;
+  }
+  input,
+  select,
+  textarea {
+    @apply m-1 rounded bg-card p-1;
+  }
+}
+/*
+Gobals.css basically define most of the rules happening in the app. At the very least, the most basic ones.
+*/
+@layer components {
+  .white {
+    @apply text-white;
+  }
+  .icon {
+    @apply white text-default-text text-xl;
+  }
+  .btn {
+    @apply hover:no-underline bg-blue-accent hover:bg-blue-accent-hover tracking-wider w-full text-center text-nav font-bold cursor-pointer uppercase px-4 py-2 rounded-md transition-colors block;
+  }
+}
+/*
+Code above is just defining what our classes we put on Nv.jsx file we create. As in, how they would look like
+*/
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
