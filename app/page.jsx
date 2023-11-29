@@ -49,6 +49,9 @@ const Dashboard = async () => {
                       ticket={filteredTicket}
                     />
                   ))}
+                {posts.map((post: any) => (
+                  // Insert the code related to 'posts' here
+                ))}
               </div>
             </div>
           ))}
@@ -56,5 +59,4 @@ const Dashboard = async () => {
     </div>
   );
 };
-
 export default Dashboard;
